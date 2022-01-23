@@ -1,0 +1,18 @@
+=========multi auth========
+class HomeController extends Controller{
+     public function index() {
+       $role=Auth::user()->role;
+       if($role=='1')
+       {
+          return view(admin.dashboard);
+       }else
+       { return view(user.dashboard);
+
+}
+
+
+
+
+
+===VIDEO REFERENSI===========
+https://www.youtube.com/watch?v=85B7DsT75Y4
