@@ -11,15 +11,13 @@ class DashboardController extends Controller
 {
     public function index()
     {
-            $role=Auth::user()->role;
-
-            if($role=='1')
-            {
-                 return view('admin.dashboard');
-            }else
-            { 
-                return view('dashboard');
-             }
+       if(Auth::check() && Auth::user()->role === '1')
+        {
+             return view('admin.dashboard');
+        }else
+        { 
+            return view('dashboard');
+         }
     }
     /**
      * Show the form for creating a new resource.
